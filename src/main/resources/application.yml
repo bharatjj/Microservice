@@ -1,0 +1,24 @@
+
+     
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://awsmongo:awsmongo@awsmongospring.hrfpjhz.mongodb.net/AwsMongoSpring?retryWrites=true&w=majority
+      
+  application:
+    name: Product
+server:
+   port: 8586
+   
+   
+
+eureka:
+  client:
+    register-with-eureka: true   
+    service-url:
+      default-zone: http://localhost:8080/
+      
+      
+  instance:
+    hostname: localhost    
+       
