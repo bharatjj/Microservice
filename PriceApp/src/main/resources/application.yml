@@ -1,0 +1,11 @@
+#spring:
+#  data:
+#    mongodb:
+#      uri: mongodb+srv://awsmongo:awsmongo@awsmongospring.hrfpjhz.mongodb.net/PriceAws?retryWrites=true&w=majority
+#
+#
+#
+#      
+#server:
+#   port: 8585 
+#       
