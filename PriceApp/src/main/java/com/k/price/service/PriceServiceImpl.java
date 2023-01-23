@@ -16,6 +16,9 @@ public class PriceServiceImpl implements PriceService {
 	PriceRepository priceRepository;
 
 	@Override
+@CachePut(cacheNames = "priceCache", key = "#price.id")
+
+ 
 	public Price addPriceWithProduct(PriceDto priceDto) {
 
 		
@@ -40,6 +43,7 @@ public class PriceServiceImpl implements PriceService {
 	}
 
 	@Override
+@Cacheable(cacheNames="demoCache", key="#id")  
 	public Price getPriceById(String priceId) {
 
 		Price price = priceRepository.findById(priceId).get();
