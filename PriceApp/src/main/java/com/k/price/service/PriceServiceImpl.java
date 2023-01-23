@@ -28,6 +28,7 @@ public class PriceServiceImpl implements PriceService {
 	}
 
 	@Override
+@CachePut(cacheNames = "priceCache", key = "#price1.id")
 	public Price updateProductPrice(Price price) {
 
 		return priceRepository.save(price);
