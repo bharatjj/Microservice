@@ -1,0 +1,25 @@
+
+     
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://awsmongo:awsmongo@awsmongospring.hrfpjhz.mongodb.net/MovieAws?retryWrites=true&w=majority
+  application:
+    name: Movie
+   
+server:
+   port: 8588
+       
+       
+eureka:
+  client:
+    register-with-eureka: true   
+    service-url:
+      default-zone: http://localhost:8080/
+      
+      
+  instance:
+    hostname: localhost      
+#       
+#           
+#       
