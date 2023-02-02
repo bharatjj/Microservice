@@ -1,8 +1,8 @@
 package com.movie.controller;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.movie.entity.MovieDto;
 import com.movie.repository.MovieRepository;
 import com.movie.service.MovieService;
+import com.movie.service.MovieServiceImpl;
 
 import jakarta.validation.Valid;
 
@@ -40,6 +41,10 @@ public class MovieController {
 
 	@Autowired
 	MovieService movieService;
+
+
+	@Autowired
+	MovieServiceImpl movieServicepl;
 	
 	@PostMapping("/addMovie")
 	public ResponseEntity<?> addMovie(@Valid @RequestBody MovieDto movieDto)
@@ -77,14 +82,14 @@ public class MovieController {
 	}
 			
 			@GetMapping("/getAllMoview")
-			public ResponseEntity<?> allMovie()
+			public ResponseEntity<?> allMovie() throws IOException
 			{
 				
 				 
 				Map<String, Object> map= new HashMap<>();
 				 map.put("status", 1);
 				
-				 map.put("data", movieService.getAllMovie());
+				 map.put("data", movieServicepl.searchAllMovies());
 				 
 					return new ResponseEntity<>(map, HttpStatus.OK);
 				
