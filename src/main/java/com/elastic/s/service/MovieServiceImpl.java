@@ -77,6 +77,8 @@ public class MovieServiceImpl implements MovieService {
 	@Override
 	public void deleteMovie(String id) {
 		// TODO Auto-generated method stub
+		movieElasticRepository.deleteById(id);
+
 		movieMongoRepository.deleteById(id);
 	}
 
